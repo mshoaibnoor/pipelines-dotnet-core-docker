@@ -40,8 +40,8 @@ stages:
 - stage: Deploy
   displayName: Deploy as container on Web App
   jobs:
-  - job: Build
-    displayName: Build
+  - job: Deploy
+    displayName: Deploy
     pool:
       vmImage: $(vmImageName)
     steps:

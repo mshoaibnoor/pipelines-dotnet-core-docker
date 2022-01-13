@@ -39,6 +39,12 @@ stages:
 
 - stage: Deploy
   displayName: Deploy as container on Web App
-    - task:AzureWebAppContainer@1
-      displayName:'Azure Web App on Container Deploy'
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: $(vmImageName)
+    steps:
+    - task: AzureWebAppContainer@1
+      displayName: 'Azure Web App on Container Deploy'
       
